@@ -1,0 +1,279 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "TemporaryAccessPass",
+    "description": "Manage Temporary Access Pass in Azure Active Directory",
+    "version": "1.0"
+  },
+  "host": "graph.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/beta/users/{UPN}/authentication/temporaryAccessPassMethods": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "temporaryAccessPass": {
+                        "type": "string",
+                        "description": "temporaryAccessPass"
+                      },
+                      "createdDateTime": {
+                        "type": "string",
+                        "description": "createdDateTime"
+                      },
+                      "startDateTime": {
+                        "type": "string",
+                        "description": "startDateTime"
+                      },
+                      "lifetimeInMinutes": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "lifetimeInMinutes"
+                      },
+                      "isUsableOnce": {
+                        "type": "boolean",
+                        "description": "isUsableOnce"
+                      },
+                      "isUsable": {
+                        "type": "boolean",
+                        "description": "isUsable"
+                      },
+                      "methodUsabilityReason": {
+                        "type": "string",
+                        "description": "methodUsabilityReason"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            }
+          }
+        },
+        "summary": "ListTemporaryAccessPass",
+        "operationId": "ListTemporaryAccessPass",
+        "parameters": [
+          {
+            "name": "UPN",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "List Temporary Access Pass"
+      },
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "temporaryAccessPass": {
+                  "type": "string",
+                  "description": "temporaryAccessPass"
+                },
+                "createdDateTime": {
+                  "type": "string",
+                  "description": "createdDateTime"
+                },
+                "startDateTime": {
+                  "type": "string",
+                  "description": "startDateTime"
+                },
+                "lifetimeInMinutes": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "lifetimeInMinutes"
+                },
+                "isUsableOnce": {
+                  "type": "boolean",
+                  "description": "isUsableOnce"
+                },
+                "isUsable": {
+                  "type": "boolean",
+                  "description": "isUsable"
+                },
+                "methodUsabilityReason": {
+                  "type": "string",
+                  "description": "methodUsabilityReason"
+                }
+              }
+            }
+          }
+        },
+        "summary": "CreateTemporaryAccessPass",
+        "description": "Create a new Temporary Access Pass",
+        "operationId": "CreateTemporaryAccessPass",
+        "parameters": [
+          {
+            "name": "UPN",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "JSON": {
+                  "type": "string",
+                  "description": "JSON",
+                  "title": "",
+                  "default": "{}"
+                }
+              },
+              "required": [
+                "JSON"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "/ https://graph.microsoft.com/beta/users/{UPN}/authentication/temporaryAccessPassMethods/{id}": {},
+    "/beta/users/{UPN}/authentication/temporaryAccessPassMethods/{id}": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "temporaryAccessPass": {
+                  "type": "string",
+                  "description": "temporaryAccessPass"
+                },
+                "createdDateTime": {
+                  "type": "string",
+                  "description": "createdDateTime"
+                },
+                "startDateTime": {
+                  "type": "string",
+                  "description": "startDateTime"
+                },
+                "lifetimeInMinutes": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "lifetimeInMinutes"
+                },
+                "isUsableOnce": {
+                  "type": "boolean",
+                  "description": "isUsableOnce"
+                },
+                "isUsable": {
+                  "type": "boolean",
+                  "description": "isUsable"
+                },
+                "methodUsabilityReason": {
+                  "type": "string",
+                  "description": "methodUsabilityReason"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "UPN",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "GetTemporaryAccessPass",
+        "operationId": "GetTemporaryAccessPass",
+        "description": "Get Temporary Access Pass"
+      },
+      "delete": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "parameters": [
+          {
+            "name": "UPN",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "summary": "DeleteTemporaryAccessPass",
+        "operationId": "DeleteTemporaryAccessPass",
+        "description": "Delete Temporary Access Pass"
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": []
+    }
+  ],
+  "tags": []
+}
